@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
-
+// import LeftBar from "./components/LeftBar/LeftBar";
+// import RightBar from "./components/RightBar/RightBar";
 export default function Home() {
   return (
     <Box
@@ -11,9 +12,28 @@ export default function Home() {
         paddingTop: 2,
       }}
     >
-      <Box>Hello 1</Box>
-      <Box>Hello 2</Box>
-      <Box>Hello 3</Box>
+      <Box
+        sx={{
+          flex: "0.2",
+        }}
+      >
+        Hello 1{/* <LeftBar /> */}
+      </Box>
+      <Box
+        sx={{
+          flex: 0.7,
+          padding: "4px",
+        }}
+      >
+        Hello 2
+      </Box>
+      <Box
+        sx={{
+          flex: "0.3",
+        }}
+      >
+        Hello 3{/* <RightBar /> */}
+      </Box>
     </Box>
   );
 }
