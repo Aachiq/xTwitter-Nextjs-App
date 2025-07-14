@@ -1,4 +1,5 @@
 import { Box } from "@mui/material";
+import Main from "./components/MainContent/Main";
 // import LeftBar from "./components/LeftBar/LeftBar";
 // import RightBar from "./components/RightBar/RightBar";
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
           padding: "4px",
         }}
       >
-        Hello 2
+        <Main />
       </Box>
       <Box
         sx={{

@@ -2,6 +2,7 @@
 import { Box } from "@mui/material";
 import React from "react";
 import LeftBarItem from "./LeftBarItem";
+import Image from "next/image";
 // import styles from "./leftBar.module.css";
 
 export default function LeftBar() {
@@ -18,9 +19,8 @@ export default function LeftBar() {
     { id: 3, title: "Profile" },
   ];
   return (
-    // <Box className={styles.leftbar}>
     <Box>
-      <img
+      <Image
         src="twitter_logo.png"
         alt="xtwitter_logo"
         width={25}
@@ -28,7 +28,6 @@ export default function LeftBar() {
         style={{
           padding: "10px",
           marginLeft: "7px",
-          // background: ' green'
         }}
       />
 
