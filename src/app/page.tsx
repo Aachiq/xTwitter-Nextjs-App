@@ -1,6 +1,7 @@
 import { Box } from "@mui/material";
 import Main from "./components/MainContent/Main";
-// import LeftBar from "./components/LeftBar/LeftBar";
+import LeftBar from "./components/LeftBar/LeftBar";
+import RightBar from "./components/RightBar/RightBar";
 // import RightBar from "./components/RightBar/RightBar";
 export default function Home() {
   return (
@@ -16,9 +17,10 @@ export default function Home() {
       <Box
         sx={{
           flex: "0.2",
+          borderRight: "solid 1px #3f3f3f",
         }}
       >
-        Hello 1{/* <LeftBar /> */}
+        <LeftBar />
       </Box>
       <Box
         sx={{
@@ -33,7 +35,7 @@ export default function Home() {
           flex: "0.3",
         }}
       >
-        Hello 3{/* <RightBar /> */}
+        <RightBar />
       </Box>
     </Box>
   );

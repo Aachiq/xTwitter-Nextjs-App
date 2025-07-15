@@ -3,8 +3,16 @@ import React from "react";
 
 interface ILeftBarItemProps {
   title: string;
+  selected: boolean;
+  Icon: React.ElementType;
+  onClickItem: (title: string) => void;
 }
-export default function LeftBarItem({ title }: ILeftBarItemProps) {
+export default function LeftBarItem({
+  title,
+  // selected,
+  Icon,
+  onClickItem,
+}: ILeftBarItemProps) {
   return (
     <Box
       //   className={`sidebarItem ${selected && 'selected'}`}
@@ -13,10 +21,11 @@ export default function LeftBarItem({ title }: ILeftBarItemProps) {
         alignItems: "center",
         padding: "11px",
         cursor: "pointer",
+        // backgroundColor: "white",
       }}
-      //   onClick={() => onClickItem(title)}
+      onClick={() => onClickItem(title)}
     >
-      {/* <Icon className="sidebarItem_icon" /> */}
+      <Icon sx={{ color: "white" }} />
       {
         <Typography
           className="sidebarItem_text"

@@ -1,30 +1,45 @@
 "use client";
 import { Box } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import LeftBarItem from "./LeftBarItem";
 import Image from "next/image";
 // import styles from "./leftBar.module.css";
+import HomeIcon from "@mui/icons-material/Home";
+import ExploreIcon from "@mui/icons-material/Explore";
+import NotificationsIcon from "@mui/icons-material/Notifications";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function LeftBar() {
+  const [listItems, setListItems] = useState([
+    { id: 1, title: "Home", icon: HomeIcon, selected: false },
+    { id: 2, title: "Messages", icon: ExploreIcon, selected: false },
+    { id: 3, title: "Lists", icon: MenuIcon, selected: false },
+    {
+      id: 3,
+      title: "Notification",
+      icon: NotificationsIcon,
+      selected: false,
+    },
+  ]);
+
   // const [activeItem, setActiveItem] = useState("Home");
 
-  // const handleActiveItem = (title: string) => {
-  //   setActiveItem(title);
-  // };
+  const handleActiveItem = (title: string) => {
+    setListItems((prevItems) =>
+      prevItems.map((item) => ({
+        ...item,
+        selected: item.title === title, // this line do true for one and false for all others
+      }))
+    );
+  };
 
-  const listItems = [
-    { id: 1, title: "Home" },
-    { id: 2, title: "Messages" },
-    { id: 3, title: "Lists" },
-    { id: 3, title: "Profile" },
-  ];
   return (
     <Box>
       <Image
-        src="twitter_logo.png"
+        src={`/twitter_logo.png`}
         alt="xtwitter_logo"
-        width={25}
-        height={25}
+        width={50}
+        height={50}
         style={{
           padding: "10px",
           marginLeft: "7px",
@@ -32,7 +47,13 @@ export default function LeftBar() {
       />
 
       {listItems.map((item) => (
-        <LeftBarItem key={item.id} title={item.title} />
+        <LeftBarItem
+          key={item.id}
+          title={item.title}
+          Icon={item.icon}
+          selected={item.selected}
+          onClickItem={handleActiveItem}
+        />
       ))}
       {/* <LeftBarItem
         Icon={HomeIcon}
